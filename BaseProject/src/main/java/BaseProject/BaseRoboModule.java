@@ -1,6 +1,5 @@
-package com.patrickbaumann.test.roboguice.RoboTest;
+package BaseProject;
 
-import BaseProject.*;
 import com.google.inject.AbstractModule;
 
 /**
@@ -10,7 +9,7 @@ import com.google.inject.AbstractModule;
  * Time: 8:43 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TestModule extends AbstractModule {
+public class BaseRoboModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(Interface0.class).to(Implementation0.class);
@@ -44,6 +43,5 @@ public class TestModule extends AbstractModule {
         bind(Interface27.class).to(Implementation27.class);
         bind(Interface28.class).to(Implementation28.class);
         bind(Interface29.class).to(Implementation29.class);
-        bind(Interface30.class).to(Implementation30.class);
     }
 }

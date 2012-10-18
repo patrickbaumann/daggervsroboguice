@@ -1,8 +1,6 @@
-package com.patrickbaumann.dagger;
+package BaseProject;
 
-import BaseProject.*;
 import dagger.Module;
-import dagger.ObjectGraph;
 import dagger.Provides;
 
 /**
@@ -12,8 +10,8 @@ import dagger.Provides;
  * Time: 11:44 PM
  * To change this template use File | Settings | File Templates.
  */
-@Module
-public class TestModule {
+@Module( complete = false )
+public class BaseDaggerModule {
 
     @Provides Interface0 getInterface0(Interface1 dep){
         return new Implementation0(dep);
@@ -107,9 +105,4 @@ public class TestModule {
     Interface29 getInterface29(Interface30 dep){
         return new Implementation29(dep);
     }
-    @Provides
-    Interface30 getInterface30(){
-        return new Implementation30();
-    }
-
 }

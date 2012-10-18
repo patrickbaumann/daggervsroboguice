@@ -1,5 +1,6 @@
 package com.patrickbaumann.dagger;
 
+import BaseProject.BaseDaggerModule;
 import dagger.Module;
 
 /**
@@ -11,7 +12,7 @@ import dagger.Module;
  */
 @Module(
         entryPoints = {HelloAndroidActivity.class},
-        includes = {TestModule.class}
+        includes = {BaseDaggerModule.class, DaggerTestModule.class}
 )
 public class ApplicationModule {
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="roboguice_modules">
-        <item>com.patrickbaumann.test.roboguice.RoboTest.TestModule</item>
+        <item>com.patrickbaumann.test.roboguice.RoboTest.RoboTestModule</item>
+        <item>BaseProject.BaseRoboModule</item>
     </string-array>
 </resources>
