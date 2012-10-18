@@ -1,0 +1,6 @@
+*/target
+*/gen
+*/out
+*/.idea
+**.iml
+*/gen-external-apklibs
