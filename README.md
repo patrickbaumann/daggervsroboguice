@@ -56,4 +56,10 @@ Running the built APKs from this source gets the following results:
 * DaggerTest: 62ms average start up time with 16 runs.
 * RoboTest: 403ms average start up time with 16 runs.
 
-I'll attempt to do additional profiling of where that time is being spent in each project, but the initial results are exciting to say the least.
+Additional profiling found that setContentView takes ~35ms for both applications with onCreate using up the remaining time. So operating under the assumption that onCreate is *only* spending time instantiating and providing / injecting objects:
+* dagger: ~25ms
+* RoboGuice: ~365ms
+
+Disclaimer
+=========
+Keep in mind that RoboGuice is preparing itself to provide much more than the 30 classes we've defined for this test (services, contexts, etc.), so this isn't quite an apples to apples test; more of an apple pie to apples comparison. Perhaps a Guice vs. Dagger comparison would be more apt, but until we have a RoboDagger (sounds painful), this will have to suffice. That said, I've done profiling of RoboGuice and its initialization cold start is a direct result of its use of Guice. That 400ms startup cost can be traced to Guice's module execution and binding validation, not the RoboGuice code that wraps it.

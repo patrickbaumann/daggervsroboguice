@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 public class HelloAndroidActivity extends DaggerActivity {
 
-    private static String TAG = "DaggerTest";
+    private static String TAG = "com.patrickbaumann.DaggerTest";
 
     /**
      * Called when the activity is first created.
@@ -16,16 +16,22 @@ public class HelloAndroidActivity extends DaggerActivity {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "onCreate start | " + System.currentTimeMillis());
         super.onCreate(savedInstanceState);
-		Log.i(TAG, "onCreate");
+        Log.i(TAG, "onCreate setContentView | " + System.currentTimeMillis());
         setContentView(R.layout.main);
+        Log.i(TAG, "onCreate complete | " + System.currentTimeMillis());
     }
 
     @Override
-    protected void onResume(){
+    public void onResume(){
+        Log.i(TAG, "onResume start | " + System.currentTimeMillis());
         TextView textView = (TextView)findViewById(R.id.hello);
+        Log.i(TAG, "onResume executeStart | " + System.currentTimeMillis());
         textView.setText(dep.getString() + ", " + (System.currentTimeMillis() - ((DaggerApplication)getApplication()).startTime));
+        Log.i(TAG, "onResume executeComplete | " + System.currentTimeMillis());
         super.onResume();
+        Log.i(TAG, "onResume finish | " + System.currentTimeMillis());
     }
 
 }
