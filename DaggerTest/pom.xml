@@ -10,7 +10,7 @@
 
     <properties>
         <platform.version>4.1.1.4
-            </platform.version>
+        </platform.version>
     </properties>
 
     <dependencies>
@@ -27,9 +27,9 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>com.squareup</groupId>
+            <groupId>com.squareup.dagger</groupId>
             <artifactId>dagger</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.1</version>
         </dependency>
 
     </dependencies>
@@ -39,16 +39,12 @@
             <plugin>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.6.0</version>
                 <configuration>
-                    <androidManifestFile>${project.basedir}/AndroidManifest.xml</androidManifestFile>
-                    <assetsDirectory>${project.basedir}/assets</assetsDirectory>
-                    <resourceDirectory>${project.basedir}/res</resourceDirectory>
-                    <nativeLibrariesDirectory>${project.basedir}/src/main/native</nativeLibrariesDirectory>
                     <sdk>
                         <platform>16</platform>
                     </sdk>
-                                        <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                    <undeployBeforeDeploy>true</undeployBeforeDeploy>
                 </configuration>
                 <extensions>true</extensions>
             </plugin>
