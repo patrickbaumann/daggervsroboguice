@@ -11,7 +11,7 @@ import dagger.Module;
  * To change this template use File | Settings | File Templates.
  */
 @Module(
-        entryPoints = {HelloAndroidActivity.class},
+        injects = {HelloAndroidActivity.class},
         includes = {BaseDaggerModule.class, DaggerTestModule.class}
 )
 public class ApplicationModule {
